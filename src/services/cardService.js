@@ -5,7 +5,6 @@ export const getAll = async () => {
         let response = await fetch(`${baseUrl}/breeds/list/all`, {mode: 'cors'});
         
         let breeds = await response.json();
-        console.log(breeds.message)
         return breeds.message;
 
         } catch (error) {

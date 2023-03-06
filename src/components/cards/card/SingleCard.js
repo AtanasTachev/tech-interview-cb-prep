@@ -19,10 +19,17 @@ const SingleCard = ({breed}) => {
         })
     }, [breedName])
 
+    const isString = (value) => { 
+        return value?.constructor === String;
+    }
+    const breedImgBoolean = isString(breedImg);
+
     return (
         <Card>                
             <h2>{breedName}</h2>
-            <Avatar src={breedImg}></Avatar>
+            {breedImgBoolean 
+            ?(<Avatar src={breedImg}></Avatar>):
+            (<Avatar>NA</Avatar>)}            
             <h5>{breedList}</h5>
             <Button variant='outlined'>
                 <Link to={`/details/${breedName}`}>Detail</Link>

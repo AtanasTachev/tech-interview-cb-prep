@@ -19,7 +19,7 @@ const Gallery = () => {
 
     return (
         <Grid container spacing={2}>
-            {allBreed.map(x => <Grid item xs={3}><Item><SingleCard key={x} breed={x}/></Item></Grid>)}
+            {allBreed.map(x => <Grid item xs={3} key={x}><Item><SingleCard breed={x}/></Item></Grid>)}
         </Grid>
     )
 };
