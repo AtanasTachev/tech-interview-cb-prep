@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 const SingleCard = ({breed}) => {
     const breedName = breed[0];
     const breedList = breed[1].length>0 ? breed[1].join(', ') : 'No specific breeds';
-    console.log(breedList)
     const [breedImg, setBreedImg] = useState({});
 
     useEffect(() => {

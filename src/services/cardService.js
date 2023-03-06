@@ -17,7 +17,6 @@ export const getOne = async (breed) => {
     try {
         let response = await fetch(`${baseUrl}/breed/${breed}/images/random`, {mode: 'cors'});
         let imageUrl = await response.json();
-        console.log(imageUrl);
         return imageUrl;
     } catch (error) {
         console.log({message: error.message})

@@ -7,7 +7,6 @@ import { Card, Button, Item } from '@mui/material';
 
 const Detail = () => {
     const { breed } = useParams();
-    console.log(breed);
     const [ breedDetails, setBreedDetails ] = useState({});
 
     useEffect(() => {
