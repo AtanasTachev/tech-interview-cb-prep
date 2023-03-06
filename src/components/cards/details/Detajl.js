@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 
 import * as cardService from '../../../services/cardService.js';
 
+import { Card, Button, Item } from '@mui/material';
+
 const Detail = () => {
     const { breed } = useParams();
     console.log(breed);
@@ -17,12 +19,14 @@ const Detail = () => {
         })
     }, [breed])
 
-    return (
-        <div>
+    return (       
+        <Card>
             <h2>Breed: {breed}</h2>
             <img style={{height:400}} src={breedDetails}/>
-            <Link to="/gallery">Back to Gallery</Link>
-        </div>
+            <Button variant='outlined'>
+                <Link to="/gallery">Back to Gallery</Link>
+            </Button>
+        </Card>
     )
 }
 

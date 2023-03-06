@@ -1,7 +1,11 @@
-import Card from "../card/Card.js";
+import { useEffect, useState } from "react";
 
 import * as cardService from '../../../services/cardService.js';
-import { useEffect, useState } from "react";
+
+import SingleCard from "../card/SingleCard.js";
+
+import Grid from '@mui/material/Grid';
+import Item from '@mui/material/Grid'
 
 const Gallery = () => {
     const [allBreed, setBreeds] = useState([]);
@@ -14,9 +18,9 @@ const Gallery = () => {
     }, []);
 
     return (
-        <ul>
-            {allBreed.map(x => <Card key={x} breed={x}/>)}
-        </ul>
+        <Grid container spacing={2}>
+            {allBreed.map(x => <Grid item xs={3}><Item><SingleCard key={x} breed={x}/></Item></Grid>)}
+        </Grid>
     )
 };
 
